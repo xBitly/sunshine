@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>I Love You</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap" rel="stylesheet">
+  <style>
+    body, html {
+      margin: 0;
+      height: 100%;
+      text-align: center;
+      font-family: 'Oxygen Mono', monospace;
+      color: #3F72AF;
+    }
+
+    h1 {
+      text-transform: uppercase;
+      letter-spacing: 1pt;
+      font-size: 20pt;
+      margin-bottom: 15px;
+    }
+
+    p {
+      text-align: left;
+      margin: 0;
+      font-size: 12pt;
+      font-weight: 900;
+      width: 50%;
+      display: none;
+    }
+
+    #table {
+      display: table;
+      width: 100%;
+      height: 100%;
+      background-color: #F9F7F7;
+    }
+
+    #centeralign {
+      display: table-cell;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+  <div id="table">
+    <div id="centeralign">
+      <h1>СОЛНЫШКУ ОТ ДЕТЁНЫША</h1>
+      <p>Привет! Я хочу сказать тебе кое-что. Ты - самое лучшее, что происходило со мной в этой жизни. С самой первой нашей встречи и по сей день ты делаешь меня счастливым, даришь улыбку и мотивацию стараться ради нашего совместного будущего. Надеюсь, что тебе со мной тоже хорошо. Прости, пожалуйста, что бываю иногда грубым, злым или еще как-то проявляю не те эмоции, которые хотелось бы, я бы хотел проявлять к тебе только хорошее, ведь это то, что ты мне даешь и я буду стараться, чтобы так оно и было. И прости за то что иногда у меня бывают резкие спады настроения, ты знаешь по какой причине они и я это тоже знаю, я постараюсь что-то с этим сделать, потому что чувствую, будто ты из-за меня хочешь менять какие-то решения, я не хочу чтобы я влиял как-то вот так на твою жизнь, хочу чтобы соответсвовал обещанию полной свободы, вне зависимости от того, что может ее ограничить. Думаю и ты, и я понимаем что обоим неприятно и решение на этот счет должны быть исходя из этого понимания и собственных желаний, а не из-за того, что кто-то попросил не делать того или иного. Я никогда не запрещу тебе что-то не делать, даже если будет безумно неприятно, да и попросить это тоже не факт что смогу. Прости меня пожалуйста за все плохое.. Надеюсь, ты будешь счастлива со мной. Я мечтаю поскорее съехаться и просыпаться каждое утро встречая твое самое красивое и милое личико, чувствовать твои руки на свое теле, обнимать и целовать когда захочу, я надеюсь, что это как можно раньше станет реальностью... А еще у нас обязательно будет гигантский кролик и еще кто-то, если захочешь. А по утрам я буду готовить тебе завтрак и крепко-крепко обнимать. Ты у меня самая лучшая, вообще огромная умничка, закончилась наконец-то хорошо сессия, я безумно рад, что ты сдала. В будущем надеюсь не будет таких больше сложностей и по ночам будем чем-то более интересным заниматься. Я очень сильно люблю тебя.</p>
+    </div>
+  </div>
+  <script>
+    function typeEffect(element, speed) {
+      const text = element.innerHTML;
+      element.innerHTML = "";
+
+      let i = 0;
+      const timer = setInterval(function () {
+        if (i < text.length) {
+          element.append(text.charAt(i));
+          i++;
+        } else {
+          clearInterval(timer);
+        }
+      }, speed);
+    }
+
+    const speed = 100;
+    const h1 = document.querySelector('h1');
+    const p = document.querySelector('p');
+    const delay = h1.innerHTML.length * speed + speed;
+
+    typeEffect(h1, speed);
+
+    setTimeout(function(){
+      p.style.display = "inline-block";
+      typeEffect(p, speed);
+    }, delay);
+  </script>
+</body>
+</html>
